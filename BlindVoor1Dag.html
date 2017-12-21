@@ -1,0 +1,95 @@
+<html>
+<head>
+    <meta name="google-site-verification" content="OCayDONcwwBKXHSfzVpws-2qZPWhOOhNFifwyB4Aop0" />
+    <script type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+    
+<script>
+
+    $(function() {
+
+
+   var people = [];
+
+   $.getJSON('client_id.json', function(data) {
+       $.each(data.person, function(i, f) {
+          var tblRow = "<tr>" + "<td>" + f.client_id + "</td>" +
+           "<td>" + f.project_id + "</td>" + "<td>" + f.auth_uri + "</td>" + "<td>" + f.token_uri + "</td>" + "<td>" + f.auth_provider_x509_cert_url + "</td>" + "<td>" + f.client_secret + "</td>" + "<td>" + f.redirect_uris + "</td>" + "</tr>"
+           $(tblRow).appendTo("#userdata tbody");
+     });
+
+   });
+
+});
+</script>
+    
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '239294603273367',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.11'
+    });
+      
+    FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+    var accessToken = response.authResponse.accessToken;
+}); 
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+    
+function statusChangeCallback(response)
+    {
+        if (response.status === "connected"){
+            console.log('logged in');
+        }
+        else{
+            console.log('not logged in');
+            
+    
+        }
+    }
+
+    
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+      
+      FB.api('/me', {fields: 'name, friends, picture, friendlists'}, function(response) {
+  console.log(response);});
+      
+      
+          
+          
+    
+  });
+}
+    
+function logout(){
+    FB.logout(function(){
+        console.log("logged out");
+    })
+    
+}
+    
+    /* make the API call */
+</script>
+    
+    <fb:login-button 
+  scope="public_profile,email, manage_pages"
+  onlogin="checkLoginState();">
+</fb:login-button>
+    
+<button type="button" onclick="logout()">log out</button>
+</body>
+</html>

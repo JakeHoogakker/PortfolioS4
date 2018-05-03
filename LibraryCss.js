@@ -39,15 +39,23 @@ $('body').mousemove(function(event){
     console.log("anything");
         if(e.which == 49){ 
             xyz[0] += 5;
-        $(this).css("background-color", "rgb("+xyz[0]+","+xyz[1]+","+xyz[2]+")");          
+        $(this).css("background-color", "rgb("+xyz[0]+","+xyz[1]+","+xyz[2]+","+xyz[3]+")");          
         } 
        else if(e.which == 50){ 
             xyz[1] += 5;
-        $(this).css("background-color", "rgb("+xyz[0]+","+xyz[1]+","+xyz[2]+")");          
+        $(this).css("background-color", "rgb("+xyz[0]+","+xyz[1]+","+xyz[2]+","+xyz[3]+")");          
         } 
        else if(e.which == 51){ 
             xyz[2] += 5;
-        $(this).css("background-color", "rgb("+xyz[0]+","+xyz[1]+","+xyz[2]+")");          
+        $(this).css("background-color", "rgb("+xyz[0]+","+xyz[1]+","+xyz[2]+","+xyz[3]+")");          
+        } 
+        else if(e.which == 52){ 
+            xyz[3] += 0.1;
+        $(this).css("background-color", "rgb("+xyz[0]+","+xyz[1]+","+xyz[2]+","+xyz[3]+")");          
+        } 
+       else if(e.which == 53){ 
+            xyz[3] -= 0.1;
+        $(this).css("background-color", "rgb("+xyz[0]+","+xyz[1]+","+xyz[2]+","+xyz[3]+")");          
         } 
 }); 
     
@@ -133,27 +141,33 @@ function changesize()
 function changecolor(e){
     
         var SelCol = document.getElementById(Selement);
-        if(e.which == 49){ 
-            xyz[0] += 5;
-        SelCol.style.backgroundColor = "rgb("+xyz[0]+","+xyz[1]+","+xyz[2]+","+xyz[3]+")";  
-        } 
-       else if(e.which == 50){ 
-            xyz[1] += 5;
-        SelCol.style.backgroundColor = "rgb("+xyz[0]+","+xyz[1]+","+xyz[2]+","+xyz[3]+")";            
-        } 
-       else if(e.which == 51){ 
-            xyz[2] += 5;
-        SelCol.style.backgroundColor = "rgb("+xyz[0]+","+xyz[1]+","+xyz[2]+","+xyz[3]+")";            
-        } 
-    else if(e.which == 52){ 
-        xyz[3] += 0.1;
-        SelCol.style.backgroundColor = "rgb("+xyz[0]+","+xyz[1]+","+xyz[2]+","+xyz[3]+")";           
-        } 
-    else if(e.which == 53){ 
-        xyz[3] -= 0.1;
-        SelCol.style.backgroundColor = "rgb("+xyz[0]+","+xyz[1]+","+xyz[2]+","+xyz[3]+")"; 
-        } 
+        switch(e.which){ 
+            case 49:
+                xyz[0] += 5;
+                break;
+            case 50:
+                xyz[1] += 5;
+                break;
+            case 51:
+                xyz[2] += 5;
+                break;
+            case 52:
+                xyz[3] += 0.1;
+                break;
+            case 53:
+                xyz[3] -= 0.1;
+                break;
+            case 55:
+                xyz[0] -= 5;
+                break;
+            case 56:
+                xyz[1] -= 5;
+                break;
+            case 57:
+                xyz[2] -= 5;
+                break;
+        }   
+    SelCol.style.backgroundColor = "rgb("+xyz[0]+","+xyz[1]+","+xyz[2]+","+xyz[3]+")"; 
 }
 
-     
-        
+

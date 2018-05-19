@@ -1,12 +1,12 @@
-# PortfolioS4
+PortfolioS4
 
-## Css editor
+# Css editor
 This is an editor for changing css in a browser via key and mouse controls.
 
-## Getting Started
+# Getting Started
 This editor is made for an existing site in which you want to edit certain elements.
 
-# Installing
+## Installing
 To use this library download this file and link to the script in your site’s html.
 Use
 Left click: select or deselect an element.
@@ -23,7 +23,7 @@ Border mode:
 “-,=”: change the border style (solid or dotted).
 The other previously mentioned key controls also work on the borders.
 
-# Notes
+## Notes
 This editor is not finished yet and can’t save any made edits yet.
 
 ## Authors

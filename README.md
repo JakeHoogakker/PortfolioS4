@@ -3,7 +3,7 @@ PortfolioS4
 # Css editor
 This is an editor for changing css in a browser via key and mouse controls.
 
-# Getting Started
+## Getting Started
 This editor is made for an existing site in which you want to edit certain elements.
 
 ## Installing

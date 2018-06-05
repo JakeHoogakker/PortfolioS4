@@ -25,7 +25,9 @@ The other previously mentioned key controls also work on the borders.
 
 ## Code explanation 
 function getid is added to a click event and reads the id of the clicked object if it's not already selected into variable named Selement.
+
 function getposition is linked to mouse movement whose position is read into the style of the selected objects if something is selected.
+
 function keychanges works with the getKey function which read what key is pressed, depending on this the selected element's properties get changed. With space you change which variables get changed which is then implemented on a certain property of the element. 
 
 ## Notes

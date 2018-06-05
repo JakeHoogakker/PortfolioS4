@@ -23,6 +23,11 @@ Border mode:
 “-,=”: change the border style (solid or dotted).
 The other previously mentioned key controls also work on the borders.
 
+## code explanation 
+function getid is added to a click event and reads the id of the clicked object if it's not already selected into variable named Selement.
+function getposition is linked to mouse movement whose position is read into the style of the selected objects if something is selected.
+function keychanges works with the getKey function which read what key is pressed, depending on this a function is called. In case of "1"-"9" 
+
 ## Notes
 This editor is not finished yet and can’t save any made edits yet.
 
